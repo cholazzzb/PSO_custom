@@ -1,0 +1,21 @@
+{
+  "name": "pso_custom",
+  "version": "1.0.0",
+  "description": "A custom setup PSO library in js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js",
+    "simulate": "node ./simulate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cholazzzb/PSO_custom.git"
+  },
+  "author": "Nicholas Biantoro",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/cholazzzb/PSO_custom/issues"
+  },
+  "homepage": "https://github.com/cholazzzb/PSO_custom#readme"
+}
