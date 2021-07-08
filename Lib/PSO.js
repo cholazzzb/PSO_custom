@@ -33,6 +33,35 @@ PSO.prototype.calculateCostValue = function (setpoint_array, simulation_array) {
       });
 
       break;
+
+    case "ITAE":
+      simulation_array.forEach((simulation_data, simulation_index) => {
+        cost_value =
+          cost_value +
+          (simulation_index + 1) *
+            this.Model.dt *
+            Math.abs(simulation_data - setpoint_array[simulation_index]);
+      });
+      break;
+
+    case "ISE":
+      simulation_array.forEach((simulation_data, simulation_index) => {
+        cost_value =
+          cost_value +
+          Math.pow(simulation_data - setpoint_array[simulation_index], 2);
+      });
+      break;
+
+    case "ITSE":
+      simulation_array.forEach((simulation_data, simulation_index) => {
+        cost_value =
+          cost_value +
+          (simulation_index + 1) *
+            this.Model.dt *
+            Math.pow(simulation_data - setpoint_array[simulation_index], 2);
+      });
+      break;
+
     default:
       break;
   }
@@ -113,7 +142,7 @@ PSO.prototype.run = function () {
         Particle.updateBestCostVal(cost_value);
         Particle.updateBestPos(Particle.current_position);
       }
-      
+
       let vel_inertia = util.calculateWithVector(
         "times",
         w,

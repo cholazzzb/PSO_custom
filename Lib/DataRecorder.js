@@ -13,18 +13,15 @@ DataRecorder.prototype.addData = function (newDatas) {
   }
 };
 
-DataRecorder.prototype.saveData = function (type, folderName, fileName) {
-  let extension;
+DataRecorder.prototype.saveData = function (extension, folderName, fileName) {
   let content;
   switch (type) {
     case "js":
-      extension = "js";
       content = `const ${fileName} = ${JSON.stringify(
         this.data
       )}; export default ${fileName}`;
       break;
     case "py":
-      extension = "py";
       content = `${fileName} = ${JSON.stringify(this.data)}`;
       break;
 

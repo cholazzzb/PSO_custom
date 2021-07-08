@@ -2,7 +2,7 @@ import PSO from "./Lib/PSO.js";
 import QuadModel from "./Lib/QuadModel.js";
 
 const setup = {
-  total_particles: 30,
+  total_particles: 3000,
   number_parameters: 3,
   epoch: 100,
   min_param_value: 0,
