@@ -8,5 +8,9 @@ xPosProcessed = []
 for data in xPos:
     xPosProcessed.append(data +0.93)
 plt.plot(time, xPosProcessed)
+plt.title("Respons Posisi X")
+plt.xlabel("Waktu (sekon)")
+plt.ylabel("Posisi x (meter)")
 
+plt.savefig("PSO Sesuai Notes")
 plt.show()
